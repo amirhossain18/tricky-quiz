@@ -1,0 +1,11 @@
+.new{
+    flex-direction: row;
+    width: 600px;
+    justify-content: center;
+
+}
+
+.new a{
+    text-decoration: none;
+    margin-left: 10px;
+}
