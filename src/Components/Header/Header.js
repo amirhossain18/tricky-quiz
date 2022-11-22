@@ -1,20 +1,21 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
+
     return (
-        <Navbar bg="light" expand="lg" >
+        <Navbar bg="primary" expand="lg" >
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="#home" className="text-white">Tricky Quiz</Navbar.Brand>
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto new">
+          <Nav className="me-auto new text-white">
      
-        <Link to='/'>Home</Link>
-       <Link to='about'>About</Link>
+        <NavLink className="text-white" to='/' >Home</NavLink>
+       <NavLink className="text-white" to='about'>About</NavLink>
      
           
           </Nav>
