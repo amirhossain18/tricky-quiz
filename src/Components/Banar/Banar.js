@@ -3,12 +3,12 @@ import banar from '../Images/cover.jpg'
 import './Banar.css'
 const Banar = () => {
     return (
-        <div class="container">
-  <div class="row banar">
-    <div class="col">
+        <div className="container">
+  <div className="row banar">
+    <div className="col">
     <img className="img-fluid" src={banar} alt="" />
     </div>
-    <div class="col">
+    <div className="col">
     <img className="img-fluid" src={banar} alt="" />
     </div>
     </div>
