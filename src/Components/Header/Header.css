@@ -1,10 +1,8 @@
 .new{
     flex-direction: row;
-    width: 600px;
-    justify-content: center;
-
+    width: -webkit-fill-available;
+    justify-content: end;
 }
-
 .new a{
     text-decoration: none;
     margin-left: 10px;

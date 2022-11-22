@@ -1,19 +1,45 @@
 
 
-import { Route, Routes } from 'react-router-dom';
+import { createBrowserRouter,  RouterProvider } from 'react-router-dom';
 import About from './Components/About/About';
-import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
+import Main from './Components/Main/Main';
 
 function App() {
+  const router= createBrowserRouter([
+    {
+      path: '/', 
+   
+      element:<Main></Main>,
+      children: [
+       {
+         path: '/',
+         loader:()=>fetch('https://openapi.programming-hero.com/api/quiz'),
+         element:<Home></Home> 
+   
+        },
+        {
+         path: 'about',
+         element:<About></About>
+        }
+
+      ]
+      }
+
+  ])
+ 
+    
+   
+ 
+
+
+  
   return (
-    <div >
-  <Header></Header>
-  <Routes>
-      <Route path="/"  element={<Home></Home>}></Route>
-      <Route path="about"  element={<About></About>}></Route>
-      </Routes>
+    <div className="App">
+  
+    <RouterProvider router={router}></RouterProvider>
     </div>
+  
   );
 }
 

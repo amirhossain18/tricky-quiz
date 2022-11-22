@@ -1,12 +1,27 @@
 import React from 'react';
-import cover from '../Images/cover.jpg'
+
+import { useLoaderData } from 'react-router-dom';
+import Banar from '../Banar/Banar';
+import Quiz from '../Quiz/Quiz';
 import './Home.css'
 const Home = () => {
+    const allQuize = useLoaderData();
+    const quizdata =allQuize.data
     return (
-        <div className="banar container">
-          <img  src={cover} alt="" />
-          <input type="text" placeholder="Type your name" />
-           <button>Submit</button>
+        <div className="container">
+     
+        
+
+    <Banar></Banar>
+           <div className="main-body">
+      {
+        quizdata.map(quiz =><Quiz 
+            key={quiz.id}
+            quiz={quiz}
+            ></Quiz>)
+      }
+
+           </div>
         </div>
     );
 };
