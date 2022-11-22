@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar  } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link, NavLink } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 import './Header.css'
 
 const Header = () => {
@@ -9,14 +9,24 @@ const Header = () => {
     return (
         <Navbar bg="primary" expand="lg" >
       <Container>
-        <Navbar.Brand href="#home" className="text-white">Tricky Quiz</Navbar.Brand>
+        <Navbar.Brand href="/" className="text-white">Tricky Quiz</Navbar.Brand>
         <Navbar.Toggle  aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto new text-white">
      
-        <NavLink className="text-white" to='/' >Home</NavLink>
-       <NavLink className="text-white" to='about'>About</NavLink>
-       <NavLink className="text-white" to='statistics'>Statistics</NavLink>
+        <NavLink  className={({ isActive, isPending }) => {
+    return isActive ? "active" :  "text-white"
+  }} to='/' >Home</NavLink>
+       <NavLink className={({ isActive, isPending }) => {
+    return isActive ? "active" :  "text-white"
+  }}to='about'>About</NavLink>
+       <NavLink className={({ isActive, isPending }) => {
+    return isActive ? "active" :  "text-white"
+  }} to='statistics'>Statistics</NavLink>
+   <NavLink className={({ isActive, isPending }) => {
+    return isActive ? "active" :  "text-white"
+  }} to='blog'>Blog</NavLink>
+          
           
           </Nav>
         </Navbar.Collapse>
